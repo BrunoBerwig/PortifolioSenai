@@ -1,0 +1,27 @@
+.projeto {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .midia img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border-radius: 50px;
+    background-color: #004aad;
+    color: white;
+    font-size: 1.1rem;
+  }
+  
+  button:hover {
+    background-color: #003f8d;
+  }
+  
