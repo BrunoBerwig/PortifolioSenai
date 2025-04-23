@@ -1,58 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .sobre-container {
-    position: relative;
-    min-height: 100vh;
-    padding: 4rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
-    overflow: hidden;
-  }
-  
-  /* conteúdo alinhado com o mesmo visual da home */
-  .content {
-    text-align: center;
-    z-index: 1;
-    position: relative;
-    max-width: 700px;
-  }
-  
-  .profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 3px solid currentColor;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  
-  ul {
-    list-style: square;
-    text-align: left;
-    padding-left: 2rem;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-  }
-  
-  li {
-    margin-bottom: 0.5rem;
-  }
-  
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.4s, color 0.4s;
+  font-family: 'Fira Code', monospace;
+  overflow: hidden;
+}
+
+.sobre-container.light,
+.sobre-container.dark {
+  background: #0d0d0d; /* escuro em ambos os modos */
+  color: #ffffff;      /* texto branco */
+}
+
+.terminal {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 174, 255, 0.3);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.terminal-line {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.prompt {
+  color: #00c3ff; /* destaque em verde neon */
+  font-weight: bold;
+}
+
+.terminal-output {
+  margin-left: 1.5rem;
+  white-space: pre-wrap;
+}
+
+.blinking-cursor {
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.back-home {
+  display: block;
+  margin-top: 2rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.back-home:hover {
+  border-color: #00ff90;
+}
+
+/* Shapes decorativas */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+.shape1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+  background: #00ff90;
+  animation: moveShape1 6s infinite alternate;
+}
+
+.shape2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  background: #007bff;
+  animation: moveShape2 5s infinite alternate;
+}
+
+.shape3 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff007c;
+  animation: moveShape3 7s infinite alternate;
+}
+
+@keyframes moveShape1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(200px, -200px); }
+}
+
+@keyframes moveShape2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-150px, 150px); }
+}
+
+@keyframes moveShape3 {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.1); }
+}

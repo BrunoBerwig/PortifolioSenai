@@ -1,30 +1,131 @@
-.contato {
-    padding: 5rem 2rem;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  form input,
-  form textarea {
-    padding: 15px;
-    margin-bottom: 20px;
-    width: 100%;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  form button {
-    padding: 15px 25px;
-    border-radius: 5px;
-    background-color: #004aad;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #003f8d;
-  }
-  
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+.contato-container {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.4s, color 0.4s;
+  font-family: 'Fira Code', monospace;
+  overflow: hidden;
+}
+
+.contato-container.light,
+.contato-container.dark {
+  background: #0d0d0d;
+  color: #ffffff;
+}
+
+.terminal {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.terminal-line {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.prompt {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.blinking-cursor {
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-details a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+.shape1 {
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  left: -100px;
+  background: #00d9ff;
+  animation: moveShape1 6s infinite alternate;
+}
+
+.shape2 {
+  width: 450px;
+  height: 450px;
+  bottom: -120px;
+  right: -120px;
+  background: #007bff;
+  animation: moveShape2 5s infinite alternate;
+}
+
+.shape3 {
+  width: 250px;
+  height: 250px;
+  bottom: 150px;
+  left: 25%;
+  background: #ff007c;
+  animation: moveShape3 7s infinite alternate;
+}
+
+@keyframes moveShape1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(200px, -200px); }
+}
+
+@keyframes moveShape2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-150px, 150px); }
+}
+
+@keyframes moveShape3 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(150px, -150px); }
+}

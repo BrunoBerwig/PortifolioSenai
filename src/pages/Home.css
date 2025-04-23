@@ -1,189 +1,149 @@
-/* Configuração para o fundo e formas geométricas */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .home-container {
-    min-height: 100vh;
-    padding: 4rem 2rem;
-    transition: background 0.4s, color 0.4s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites da tela */
-  }
-  
-  /* Estilo do fundo no modo Light */
-  .home-container.light {
-    background: #ffffff;
-    color: #111;
-  }
-  
-  /* Estilo do fundo no modo Dark */
-  .home-container.dark {
-    background: #0e0e0e;
-    color: #f5f5f5;
-  }
-  
-  /* Forma geométrica em Neon */
-  .background-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Faz com que as formas fiquem atrás do conteúdo */
-    overflow: hidden;
-  }
-  
-  .shape {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.6;
-    transition: background 0.4s, transform 0.5s;
-  }
-  
-  /* Formas específicas */
-  .shape1 {
-    width: 350px;
-    height: 350px;
-    top: -100px;
-    left: -100px;
-  }
-  
-  .shape2 {
-    width: 450px;
-    height: 450px;
-    bottom: -120px;
-    right: -120px;
-  }
-  
-  .shape3 {
-    width: 250px;
-    height: 250px;
-    bottom: 150px;
-    left: 25%;
-  }
-  
-  /* Modo Light - Neon Colors */
-  .home-container.light .shape1 {
-    background: #00d4ff;
-    animation: moveShape1 5s infinite alternate;
-  }
-  
-  .home-container.light .shape2 {
-    background: #ff00f7;
-    animation: moveShape2 6s infinite alternate;
-  }
-  
-  .home-container.light .shape3 {
-    background: #39ff14;
-    animation: moveShape3 7s infinite alternate;
-  }
-  
-  /* Modo Dark - Neon Colors */
-  .home-container.dark .shape1 {
-    background: #0040ff;
-    animation: moveShape1 5s infinite alternate;
-  }
-  
-  .home-container.dark .shape2 {
-    background: #ff007c;
-    animation: moveShape2 6s infinite alternate;
-  }
-  
-  .home-container.dark .shape3 {
-    background: #00ffaa;
-    animation: moveShape3 7s infinite alternate;
-  }
-  
-  /* Animações para mover as formas no fundo */
-  @keyframes moveShape1 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(200px, -200px);
-    }
-  }
-  
-  @keyframes moveShape2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(-200px, 200px);
-    }
-  }
-  
-  @keyframes moveShape3 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(150px, -150px);
-    }
-  }
-  
-  /* Estilo para a foto */
-  .profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Outros estilos */
-  .content {
-    text-align: center;
-    max-width: 600px;
-    position: relative; /* Faz com que o conteúdo fique em cima das formas */
-    z-index: 1; /* Garante que o conteúdo seja visível sobre as formas */
-  }
-  
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #777;
-  }
-  
-  .sobre-mim {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-  
-  .nav-links a {
-    font-weight: bold;
-    text-decoration: none;
-    color: inherit;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    border-color: currentColor;
-  }
-  .theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    background: transparent;
-    font-size: 1rem;
-  }
-  
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.4s, color 0.4s;
+  font-family: 'Fira Code', monospace;
+  overflow: hidden;
+}
+
+.home-container.light,
+.home-container.dark {
+  background: #0d0d0d; /* escuro em ambos os modos */
+  color: #ffffff;      /* texto branco */
+}
+
+.terminal {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 255, 140, 0.3);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem; /* Adiciona espaço entre o terminal e o conteúdo */
+}
+
+.terminal-line {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.prompt {
+  color: #00ff90; /* destaque em verde neon */
+  font-weight: bold;
+}
+
+.blinking-cursor {
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.sobre-mim {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.nav-links a {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav-links a:hover {
+  border-color: currentColor;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+.shape1 {
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  left: -100px;
+  background: #00ff90;
+  animation: moveShape1 6s infinite alternate;
+}
+
+.shape2 {
+  width: 450px;
+  height: 450px;
+  bottom: -120px;
+  right: -120px;
+  background: #007bff;
+  animation: moveShape2 5s infinite alternate;
+}
+
+.shape3 {
+  width: 250px;
+  height: 250px;
+  bottom: 150px;
+  left: 25%;
+  background: #ff007c;
+  animation: moveShape3 7s infinite alternate;
+}
+
+@keyframes moveShape1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(200px, -200px); }
+}
+
+@keyframes moveShape2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-150px, 150px); }
+}
+
+@keyframes moveShape3 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(150px, -150px); }
+}

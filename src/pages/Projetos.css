@@ -1,0 +1,171 @@
+.projetos-container {
+  min-height: 100vh; /* Garantir que ocupe toda a altura da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza o conteúdo */
+  align-items: center; /* Centraliza o conteúdo */
+  padding: 2rem; /* Espaçamento interno */
+  position: relative; /* Para poder usar as formas geométricas no fundo */
+  overflow: hidden; /* Impede que o conteúdo ultrapasse a tela */
+  background-color: #111; /* Fundo escuro */
+  color: #fff; /* Cor do texto */
+}
+
+.terminal {
+  width: 100%; /* O terminal ocupa toda a largura */
+  max-width: 800px; /* Limita a largura máxima do terminal */
+  background: #111;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; /* Centraliza o terminal horizontalmente */
+}
+
+.terminal-line {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.terminal-output {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.prompt {
+  color: #00d4ff;
+}
+
+.blinking-cursor {
+  animation: blink 1s infinite step-end;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.links {
+  margin-top: 2rem;
+}
+
+.btn-github {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn-github:hover {
+  background: #00d4ff;
+}
+
+/* Botão de voltar */
+.back-home {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.back-home:hover {
+  border-color: currentColor;
+}
+
+/* Formas geométricas no fundo */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  transition: background 0.4s, transform 0.5s;
+}
+
+.shape1 {
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  left: -100px;
+}
+
+.shape2 {
+  width: 450px;
+  height: 450px;
+  bottom: -120px;
+  right: -120px;
+}
+
+.shape3 {
+  width: 250px;
+  height: 250px;
+  bottom: 150px;
+  left: 25%;
+}
+
+/* Modo light */
+.projetos-container.light .shape1 {
+  background: #00d4ff;
+  animation: moveShape1 5s infinite alternate;
+}
+
+.projetos-container.light .shape2 {
+  background: #ff00f7;
+  animation: moveShape2 6s infinite alternate;
+}
+
+.projetos-container.light .shape3 {
+  background: #39ff14;
+  animation: moveShape3 7s infinite alternate;
+}
+
+/* Modo dark */
+.projetos-container.dark .shape1 {
+  background: #0040ff;
+  animation: moveShape1 5s infinite alternate;
+}
+
+.projetos-container.dark .shape2 {
+  background: #ff007c;
+  animation: moveShape2 6s infinite alternate;
+}
+
+.projetos-container.dark .shape3 {
+  background: #00ffaa;
+  animation: moveShape3 7s infinite alternate;
+}
+
+/* Animações para mover as formas */
+@keyframes moveShape1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(200px, -200px);
+  }
+}
+
+@keyframes moveShape2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-200px, 200px);
+  }
+}
+
+@keyframes moveShape3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(150px, -150px);
+  }
+}

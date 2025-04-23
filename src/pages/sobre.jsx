@@ -1,49 +1,38 @@
 import React from 'react';
-import BackgroundWeb from '../components/BackgroundWeb';
 import ThemeToggle from '../components/ThemeToggle';
+import { Link } from 'react-router-dom';
 import './Sobre.css';
 
-const Sobre = ({ theme, toggleTheme }) => {
+const Sobre = ({ toggleTheme, theme }) => {
   return (
     <div className={`sobre-container ${theme}`}>
-      {/* Fundo com partículas */}
-      <BackgroundWeb theme={theme} />
 
-      {/* Botão de tema */}
-      <ThemeToggle toggleTheme={toggleTheme} currentTheme={theme} />
+      <div className="terminal">
+        <div className="terminal-line">
+          <span className="prompt">bruno@dev:~$</span> cat sobre-mim.txt
+        </div>
 
-      {/* Conteúdo principal */}
-      <div className="content">
-        <img src="/assets/minha-foto.jpg" alt="Foto da equipe" className="profile-img" />
+        <div className="terminal-output">
+{`Nome: Bruno de Souza Berwig
+Idade: 18 anos
+Estudante: Desenvolvimento de Sistemas - SENAI
+Stack: [React, JavaScript, Node.js, CSS, HTML]
+GitHub: https://github.com/brunoberwig
+LinkedIn: https://www.linkedin.com/in/brunoberwig`}
+        </div>
 
-        <h1>Sobre o Projeto</h1>
+        <div className="terminal-line">
+          <span className="prompt">bruno@dev:~$</span>
+          <span className="blinking-cursor">|</span>
+        </div>
 
-        <section>
-          <h2>👨‍💻 Quem desenvolveu</h2>
-          <p>
-            Projeto desenvolvido por <strong>Bruno Berwig</strong>, da turma de <strong>Desenvolvimento de Sistemas</strong> — SENAI [Unidade Exemplo].
-          </p>
-        </section>
-
-        <section>
-          <h2>🚀 Por que criamos?</h2>
-          <p>
-            Criamos este projeto com o objetivo de aplicar na prática o que aprendemos no curso,
-            desenvolvendo uma aplicação com React, foco em design moderno, responsividade e boa experiência de usuário.
-          </p>
-        </section>
-
-        <section>
-          <h2>🛠️ Tecnologias utilizadas</h2>
-          <ul>
-            <li>React.js</li>
-            <li>React Router DOM</li>
-            <li>JavaScript ES6+</li>
-            <li>CSS3</li>
-            <li>tsparticles</li>
-          </ul>
-        </section>
+        <Link to="/" className="back-home">← Voltar para o Início</Link>
       </div>
+
+      {/* Background shapes */}
+      <div className="shape shape1"></div>
+      <div className="shape shape2"></div>
+      <div className="shape shape3"></div>
     </div>
   );
 };
